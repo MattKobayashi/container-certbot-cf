@@ -1,18 +1,7 @@
 ---
-name: Test
-on:
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "**.json"
-      - "**.sh"
-      - "**.yaml"
-      - "Dockerfile"
-  workflow_dispatch:
 jobs:
-  container:
-    name: Container
+  image:
+    name: Image
     permissions:
       contents: read
     runs-on: ubuntu-24.04
@@ -49,3 +38,14 @@ jobs:
       # https://www.shellcheck.net/wiki/GitHub-Actions
       - name: Run ShellCheck
         run: find . -type f -name "*.sh" -exec shellcheck {} +
+name: Test
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**.json"
+      - "**.sh"
+      - "**.yaml"
+      - "Dockerfile"
+  workflow_dispatch:
