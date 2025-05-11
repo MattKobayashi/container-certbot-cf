@@ -7,7 +7,6 @@ services:
     depends_on:
       - pebble
       - challtestsrv
-    entrypoint: ["./entrypoint_test.sh"]
     environment:
       - "EMAIL=thisis@test.test"
       - "DOMAIN=thisisa.test"
