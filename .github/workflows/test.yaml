@@ -23,6 +23,7 @@ jobs:
         run: |
           docker compose --progress plain up --build --exit-code-from certbot-cf
         timeout-minutes: 5
+        working-directory: tests
   shell:
     name: Shell
     permissions:
