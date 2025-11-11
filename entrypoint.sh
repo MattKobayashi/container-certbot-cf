@@ -17,4 +17,4 @@ post-hook = openssl pkcs12 -export -out /opt/certs/cert_key.p12 -inkey /etc/lets
 EOF
 
 certbot certonly --config /opt/certbot/cli.ini
-exec /usr/bin/supercronic /crontab/certbot-cron
+exec /usr/local/bin/supercronic /crontab/certbot-cron
