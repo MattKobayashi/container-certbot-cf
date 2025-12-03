@@ -1,4 +1,4 @@
-FROM certbot/dns-cloudflare:v5.2.0@sha256:c43eb8bd144b84d1a76d3770d7b7022f29536af5dc5ebc8bd4b67b4e4f3dea1f
+FROM certbot/dns-cloudflare:v5.2.0@sha256:bb5a1e275d3a06331d9b5b3245f778bf36179bc72820d7d567cdecfd55a854e4
 
 # renovate: datasource=repology depName=alpine_3_20/curl
 ARG CURL_VERSION="8.14.1-r2"
