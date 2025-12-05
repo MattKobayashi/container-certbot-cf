@@ -26,6 +26,7 @@ RUN mkdir /crontab/ \
     && mkdir /opt/certs/
 
 COPY certbot-cron /crontab/
+COPY renewal-hooks/ /etc/letsencrypt/renewal-hooks/
 COPY --chmod=0744 entrypoint.sh .
 COPY --chmod=0744 tests/entrypoint_test.sh .
 
