@@ -10,7 +10,7 @@ services:
     entrypoint: ["./entrypoint_test.sh"]
     environment:
       - "EMAIL=thisis@test.test"
-      - "DOMAIN=thisisa.test"
+      - "DOMAIN=thisisa.test,sub.thisisa.test"
     networks:
       acmenet:
         ipv4_address: 10.30.50.5

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PRIMARY_DOMAIN=${DOMAIN%%,*}
+PRIMARY_DOMAIN=$(printf "%s" "$PRIMARY_DOMAIN" | sed -e 's/^ *//' -e 's/ *$//' -e 's/^\*\.//')
+
 cat > cli.ini << EOF
 # dns-cloudflare = True
 standalone = True
@@ -8,7 +11,7 @@ no-eff-email = True
 keep-until-expiring = True
 # dns-cloudflare-propagation-seconds = 30
 # dns-cloudflare-credentials = /run/secrets/CERTBOT_CF_DNS_API_TOKEN
-deploy-hook = cp -RL /etc/letsencrypt/live/$DOMAIN/ /opt/certs/ && chmod -R o+r /opt/certs/
+deploy-hook = cp -RL /etc/letsencrypt/live/$PRIMARY_DOMAIN/ /opt/certs/ && chmod -R o+r /opt/certs/
 domain = $DOMAIN
 email = $EMAIL
 EOF
