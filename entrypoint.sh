@@ -13,7 +13,7 @@ email = $EMAIL
 expand = True
 keep-until-expiring = True
 no-eff-email = True
-post-hook = openssl pkcs12 -export -out /opt/certs/cert_key.p12 -inkey /etc/letsencrypt/live/$PRIMARY_DOMAIN/privkey.pem -in /etc/letsencrypt/live/$PRIMARY_DOMAIN/cert.pem -certfile /etc/letsencrypt/live/$PRIMARY_DOMAIN/chain.pem -passout pass:$CERT_PASSWORD && chmod -R o+r /opt/certs/
+post-hook = openssl pkcs12 -export -out /opt/certs/cert_key.p12 -inkey /etc/letsencrypt/live/$PRIMARY_DOMAIN/privkey.pem -in /etc/letsencrypt/live/$PRIMARY_DOMAIN/cert.pem -certfile /etc/letsencrypt/live/$PRIMARY_DOMAIN/chain.pem -passout pass:$CERT_PASSWORD && cp /etc/letsencrypt/live/$PRIMARY_DOMAIN/cert.pem /opt/certs/tls.pem && cat /etc/letsencrypt/live/$PRIMARY_DOMAIN/privkey.pem >> /opt/certs/tls.pem && chmod -R o+r /opt/certs/
 EOF
 
 certbot certonly --config /opt/certbot/cli.ini
