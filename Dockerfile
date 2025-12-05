@@ -1,12 +1,9 @@
 FROM certbot/dns-cloudflare:v5.2.1@sha256:23f0b8315a1331189816e77d661d35271ed590f2310f83547354f18fa4842d7d
 
-# renovate: datasource=repology depName=alpine_3_20/curl
-ARG CURL_VERSION="8.14.1-r2"
-# renovate: datasource=repology depName=alpine_3_20/jq
-ARG JQ_VERSION="1.7.1-r0"
+# Dependencies
 RUN apk --no-cache add \
-    curl="${CURL_VERSION}" \
-    jq="${JQ_VERSION}"
+    curl \
+    jq
 
 # Supercronic
 # renovate: datasource=github-releases packageName=aptible/supercronic
