@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 PRIMARY_DOMAIN=${DOMAIN%%,*}
 PRIMARY_DOMAIN=$(printf "%s" "$PRIMARY_DOMAIN" | sed -e 's/^ *//' -e 's/ *$//' -e 's/^\*\.//')
