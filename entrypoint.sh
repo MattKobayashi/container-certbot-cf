@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PRIMARY_DOMAIN=${DOMAIN%%,*}
-PRIMARY_DOMAIN=$(printf "%s" "$PRIMARY_DOMAIN" | sed -e 's/^ *//' -e 's/ *$//')
+PRIMARY_DOMAIN=$(printf "%s" "$PRIMARY_DOMAIN" | sed -e 's/^ *//' -e 's/ *$//' -e 's/^\*\.//')
 
 cat > cli.ini << EOF
 agree-tos = True
