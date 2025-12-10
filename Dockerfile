@@ -1,4 +1,4 @@
-FROM certbot/dns-cloudflare:v5.2.1@sha256:23f0b8315a1331189816e77d661d35271ed590f2310f83547354f18fa4842d7d
+FROM certbot/dns-cloudflare:v5.2.2@sha256:aba913370a75668cf63d74b50b7484401d3c6666fc4ba2f6fed6eeae1ea6cd3e
 
 # Dependencies
 RUN apk --no-cache add \
